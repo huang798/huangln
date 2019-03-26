@@ -1,0 +1,63 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name="keywords" content="網頁, 前端, 黃立寧, 設計, UI, tw, Li-Ning, Website, HTML, CSS, Javascript, JQuery")
+		title Li-Ning Huang's Portfolio
+		//- link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css')
+		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.2/css/all.css', integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr', crossorigin='anonymous')
+		link(rel='stylesheet', href='css/style.css')
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+
+	body
+		.navbar
+			a(href="#").navbar_logo LN
+			.navbar_list
+				a(href="#").listItem 關於我
+				a(href="#").listItem 技能
+				a(href="#").listItem 作品集
+				a(href="#").listItem 聯絡我
+		#skrollr-body
+			.header
+				#name
+					h1 Li-Ning Huang
+					hr
+				#job_title
+					p 網頁前端工程 | 平面設計 | UI/UX設計
+				.link_wrap
+				#mouse_icon
+					#wheel
+			.intro_section
+				.intro_left(data-0="transform: translateX(-200px)" data-500="transform: translateX(0px)")
+					.photo
+					.dialog#dialog1
+					//- <span id="first-default">This is<p id="first-words"></p></span>
+					.dialog#dialog2
+				.intro_text
+					h1 關於我
+					p 畢業於台灣高中，隨後進入美國普渡大學電腦圖像工程系就讀。在校期間涉獵
+						span  網頁前端開發
+						| 、
+						span UI/UX設計
+						| 、
+						span 平面設計
+						| 、
+						span 大數據分析 
+						| 等等面向，其中對於設計領域和網站開發有著熱枕。
+					p 大二時在校內報社The Exponent和TEDxPurdueU擔任平面設計師，大四時則擔當大學內的教育學系的平面設計實習生，幫忙製作宣傳海報、設計相關部門的LOGO等等。大四的畢業製作與Purdue Conference合作，小組替他們製作了可在智慧型手機上操作的購票網站。
+					br
+					p 踏入網頁開發的領域後，透過部分學校課程和線上課程的眾多資源，自主學習了前端開發的各種工具，包括基本的HTML、CSS、JavaScript，和好用的JQuery、Bootstrap、Git/GitHub等等。
+					br
+					p 現在的目標是以
+						span 網頁前端工程師
+						| 的身分加入網頁架設團隊，與其他人一同打造美觀而友善使用者的網站！
+		
+
+		
+		
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js')
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		//- script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')
+		script(src='js/all.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')

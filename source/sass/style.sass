@@ -1,0 +1,273 @@
+//COLOR SET
+$color_orange: #ff6e3a
+$bg_white: #CBD4C2
+$color_white: #F8F8F8
+
+//Initial Setting
+$font_size: 16px
+
+
+
+//明體
+// @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css)
+
+//仿宋體
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css)
+
+//黑體/思源黑體
+// @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
+
+//-------------------
+
+@mixin center
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+
+@mixin size($w, $h)
+	width: $w
+	height: $h
+
+// debug用--------------------
+// header, section, footer
+// 	display: none
+// #section_skill
+// 	display: block
+// *
+// 	border: solid 1px black !important
+
+*
+	//明體
+	// font-family: 'cwTeXYen', sans-serif
+	//仿宋體
+	// font-family: 'cwTeXFangSong', serif;
+	// 黑體/思源黑體
+	// font-family: '‘Noto Sans TC', sans-serif
+
+	font-family: '微軟正黑體'
+
+body, html
+	margin: 0px
+	padding: 0px
+	width: 100%
+	height: 100%
+
+
+body
+	overflow-x: hidden
+	height: 5000px
+
+*
+	padding: 0px
+	margin: 0px
+	position: relative
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+	font-weight: bold
+
+a
+	text-decoration: none
+
+
+// NavBar--------------------------------------------
+.navbar
+	position: fixed
+	z-index: 2
+	border-bottom: solid 1px white
+	color: white
+	display: flex
+	justify-content: space-between
+	width: 100%
+	padding: 12px 120px
+	box-sizing: border-box
+	transition-duration: 0.5s
+
+	.navbar_logo
+		display: inline-block
+		color: white
+		transition-duration: 0.5s
+		font-size: $font_size * 1.1
+		
+
+	.navbar_list a
+		color: white
+		transition-duration: 0.5s
+
+	.listItem
+		margin-right: 30px
+		transition-duration: 0.2s
+		&:hover
+			color: $color_orange
+
+.white_bg
+	background-color: #fff
+
+	.navbar_logo
+		color: #777
+		transition-duration: 0.2s
+		&:hover
+			color: $color_orange
+
+	.navbar_list a
+		color: #777
+		transition-duration: 0.2s
+		&:hover
+			color: $color_orange
+
+
+
+
+//Header---------------------------------------------
+.header
+	background-image: url("../images/doggy.png")
+	height: 500px
+	background-size: cover
+	background-repeat: no-repeat
+	background-color: rgba(black, 0.5)
+	background-blend-mode: overlay
+	background-attachment: fixed
+	background-position: center left
+
+	#name
+		text-align: center
+		top: 30%
+
+		h1
+			font-size: $font_size * 4
+			color: $color_white
+		hr
+			width: 50px
+			border: solid 2px $color_orange
+			margin-left: auto
+			margin-right: auto
+			margin-top: 20px
+
+	#job_title
+		text-align: center
+		top: 34%
+
+		p
+			color: $color_white
+			font-size: $font_size * 1.2
+
+	#mouse_icon
+		position: absolute
+		left: 50%
+		bottom: 15%
+		border: 2px solid #fff 
+		height: 40px
+		border-radius: 16px
+		width: 24px
+		margin-left: -15px
+		display: block
+		z-index: 10
+		opacity: 0.7
+
+		// @media screen and(max-width: 1024px)
+		// 	display: none
+		// @media screen and(min-width: 1366px)
+		// 	bottom: 30%
+		// @media screen and(min-width: 1640px)
+		// 	bottom: 45%
+
+
+	#wheel
+		position: relative
+		border-radius: 10px
+		background: #fff 
+		width: 2px
+		height: 6px
+		top: 4px
+		margin-left: auto
+		margin-right: auto
+		animation: wheel_roll 1s linear infinite
+
+
+	@keyframes wheel_roll 
+		0%
+			top: 5px
+			opacity: 0 
+		30%
+			top: 10px
+			opacity: 1
+		100%
+			top: 15px
+			opacity: 0 
+
+
+
+//Inrto Section--------------------------------
+.intro_section
+	background-color: $color_orange
+	display: flex
+	justify-content: center
+
+	.intro_left
+		.photo
+			background-image: url("../images/photo.jpg")
+			top: 80px
+			+size(300px, 300px)
+			background-position: center center
+			background-size: 80%
+			border-radius: 50%
+			box-shadow: 5px 5px 20px rgba(black, 0.6)
+			margin-right: 150px
+
+		.dialog
+			box-sizing: border-box
+			border: solid 1px white
+			+size(250px, 50px)
+			background-color: #fff
+			margin-bottom: 15px
+			border-radius: 5px
+			top: 120px
+			box-shadow: 5px 5px 12px rgba(black, 0.6)
+			padding: 14px 20px
+			border: solid 1px black
+			text-align: center
+			font-size: 16px
+
+			&:before
+				content: ""
+				border-bottom: solid 1px black
+				border-left: solid 1px black
+				background-color: #fff
+				+size(12px,12px)
+				position: absolute
+				left: -8px
+				top: 10px
+				transform: rotate(45deg)
+
+		#dialog2
+			margin-left: 60px
+
+		#dialog1, #dialog2
+			&:after
+				content: ""
+				position: absolute
+				height: 18px
+				border: solid 1px #ccc
+				margin-top: 2px
+				margin-left: 4px
+				// animation-name: flashing
+				// animation-duration: 1s
+
+	// @keyframes flashing
+	// 	0% 
+	// 		border: none
+	// 	100%
+	// 		border: solid 1px #ccc
+
+
+	.intro_text
+		top: 80px
+		width: 500px
+
+		span
+			color: white
+
+		p
+			font-size: $font_size
+			line-height: $font_size * 1.5
+			margin-bottom: $font_size * 2.25
