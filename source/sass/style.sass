@@ -36,7 +36,7 @@ $font_size: 16px
 	height: $h
 
 // debug用--------------------
-// .header, .intro_section, footer
+// .header, #intro_section, footer
 // 	display: none
 // .works_section, .header
 // 	display: block
@@ -207,7 +207,7 @@ a
 
 
 //Inrto Section--------------------------------
-.intro_section
+#intro_section
 	background-color: $color_orange
 	display: flex
 	justify-content: center
@@ -280,13 +280,16 @@ a
 
 
 //Skill section------------------------------------
-.skill_section
-	height: 500px
+#skill_section
+	// height: 500px
 	display: flex
 	justify-content: center
-	padding-top: 80px
-	.left_wrap
-		+size(350px, 150px)
+	padding-top: 120px
+	padding-bottom: 80px
+
+
+	.left_wrap1, .left_wrap2
+		width: 450px
 		box-shadow: 5px 5px 12px rgba(black, 0.3)
 		background-color: #212121
 		color: white
@@ -303,18 +306,47 @@ a
 			box-shadow: 5px 5px 12px rgba(black, 0.3)
 			background-color: white
 
-		span
-			color: #F07178
+	.left_wrap2
+		width: 400px
+		margin-right: 0px
+		top: -40px
+		left: 280px
+		transform: rotate(5deg)
+		background-color: #181818
+		&:before
+			content: ""
+			position: absolute
+			transform: rotate(-15deg)
+			left: 220px
+			box-shadow: 5px 5px 12px rgba(black, 0.3)
+
+
+	span
+		color: #F07178
+
+	.note_title
+		font-size: 20px
+	p
+		font-size: $font_size
 
 	.right_wrap
+		h1
+			text-align: center
+			color: $color_orange
+
 		i.fas.fa-laptop-code
 			font-size: 150px
+			margin-bottom: 20px
+			// margin-top: 50px
 
 
 
 //Skill Section-----------------------------------
-.works_section
+#works_section
 	padding-bottom: 50px
+	background-color: #333
+	color: #fff
+	padding-top: 30px
 	h1
 		text-align: center
 		margin-top: 50px

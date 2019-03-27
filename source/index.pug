@@ -14,10 +14,10 @@ html(lang='en')
 		.navbar
 			a(href="#").navbar_logo LN
 			.navbar_list
-				a(href="#").listItem 關於我
-				a(href="#").listItem 技能
-				a(href="#").listItem 作品集
-				a(href="#").listItem 聯絡我
+				a(href="#intro_section").listItem 關於我
+				a(href="#skill_section").listItem 技能
+				a(href="#works_section").listItem 作品集
+				a(href="#contact_section").listItem 聯絡我
 		.myheader
 			#name
 				h1 Li-Ning Huang
@@ -27,7 +27,7 @@ html(lang='en')
 			.link_wrap
 			#mouse_icon
 				#wheel
-		.intro_section
+		#intro_section
 			.intro_left
 				.photo
 				.dialog#dialog1
@@ -49,22 +49,62 @@ html(lang='en')
 					span 網頁前端工程師
 					| 的身分加入網頁架設團隊，與其他人一同打造美觀而友善使用者的網站！
 
-		.skill_section
+		#skill_section
 			.left_wrap
-				//- replace < by &lt; and > by &gt;
-				p 
-					span h1 &nbsp; &nbsp;
-					| HTML/CSS
-				p
-					span h1 &nbsp; &nbsp;
-					| JavaScript/JQuery
+				.left_wrap1
+					//- replace < by &lt; and > by &gt;
+					p.note_title 
+						span h1 &nbsp;
+						| 核心技能
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| SASS + PostCSS 規劃響應式網頁板型
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| JavaScript/JQuery 製作動畫效果
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| AJAX資料串接
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| 介接API
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| 熟悉CSS框架Bootstrap
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| 會使用JavaScript框架Vue.js
+
+				.left_wrap2
+					p.note_title
+						span h1 &nbsp; &nbsp;
+						| 其他重點技能
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| Gulp自動化流程
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| Git/GitHub團隊協作
+
+					p
+						span &nbsp; &nbsp; &nbsp; p &nbsp;
+						| 習慣Pug(Jade)、SASS等模板引擎
+
 			.right_wrap
 				i.fas.fa-laptop-code
+				h1 &lt;技能/&gt;
 			
 
 
 
-		.works_section
+		#works_section
 			//- .container.demo
 			h1 作品集
 			hr
@@ -117,6 +157,8 @@ html(lang='en')
 						h3.direction-reveal__title Title
 						p.direction-reveal__text
 							| Description
+
+		#contact_section
 
 
 
