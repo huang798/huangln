@@ -17,6 +17,12 @@ $font_size: 16px
 //黑體/思源黑體
 // @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
 
+
+//Diraction-reveal design
+// @import "node_modules/direction-reveal/styles/direction-reveal.scss"
+@import "direction-reveal/direction-reveal.css"
+@import "direction-reveal/site.css"
+
 //-------------------
 
 @mixin center
@@ -30,14 +36,15 @@ $font_size: 16px
 	height: $h
 
 // debug用--------------------
-// header, section, footer
+// .header, .intro_section, footer
 // 	display: none
-// #section_skill
+// .works_section, .header
 // 	display: block
 // *
-// 	border: solid 1px black !important
+	// border: solid 1px black !important
 
 *
+	font-family: '微軟正黑體'
 	//明體
 	// font-family: 'cwTeXYen', sans-serif
 	//仿宋體
@@ -45,7 +52,7 @@ $font_size: 16px
 	// 黑體/思源黑體
 	// font-family: '‘Noto Sans TC', sans-serif
 
-	font-family: '微軟正黑體'
+	
 
 body, html
 	margin: 0px
@@ -56,7 +63,7 @@ body, html
 
 body
 	overflow-x: hidden
-	height: 5000px
+	// height: 5000px
 
 *
 	padding: 0px
@@ -82,6 +89,7 @@ a
 	padding: 12px 120px
 	box-sizing: border-box
 	transition-duration: 0.5s
+	box-shadow: 5px 5px 12px rgba(black, 0.3)
 
 	.navbar_logo
 		display: inline-block
@@ -119,7 +127,7 @@ a
 
 
 //Header---------------------------------------------
-.header
+.myheader
 	background-image: url("../images/doggy.png")
 	height: 500px
 	background-size: cover
@@ -202,11 +210,13 @@ a
 	background-color: $color_orange
 	display: flex
 	justify-content: center
+	padding-top: 50px
+	padding-bottom: 100px
 
 	.intro_left
 		.photo
 			background-image: url("../images/photo.jpg")
-			top: 80px
+			top: 18%
 			+size(300px, 300px)
 			background-position: center center
 			background-size: 80%
@@ -221,7 +231,7 @@ a
 			background-color: #fff
 			margin-bottom: 15px
 			border-radius: 5px
-			top: 120px
+			top: 25%
 			box-shadow: 5px 5px 12px rgba(black, 0.6)
 			padding: 14px 20px
 			border: solid 1px black
@@ -261,7 +271,7 @@ a
 
 
 	.intro_text
-		top: 80px
+		top: 16%
 		width: 500px
 
 		span
@@ -271,3 +281,23 @@ a
 			font-size: $font_size
 			line-height: $font_size * 1.5
 			margin-bottom: $font_size * 2.25
+
+		h1
+			margin-bottom: 30px
+
+
+//Skill Section-----------------------------------
+.works_section
+	padding-bottom: 50px
+	h1
+		text-align: center
+		margin-top: 50px
+
+	hr
+		border: solid 2px $color_orange
+		width: 40px
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 50px
+		margin-top: -10px
+
