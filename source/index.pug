@@ -11,25 +11,37 @@ html(lang='en')
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 
 	body
-		.navbar
-			a(href="#").navbar_logo LN
-			.navbar_list
-				a(href="#intro_section").listItem 關於我
-				a(href="#skill_section").listItem 技能
-				a(href="#works_section").listItem 作品集
-				a(href="#contact_section").listItem 聯絡我
-		.myheader
+		//- .navbar#desktop_navbar
+		//- 	a(href="#myheader").navbar_logo LN
+		//- 	.navbar_list
+		//- 		a(href="#intro_section").listItem 關於我
+		//- 		a(href="#skill_section").listItem 技能
+		//- 		a(href="#experience_section").listItem 經驗
+		//- 		a(href="#works_section").listItem 作品集
+		.navbar#mobile_navbar
+			a(href="#myheader").navbar_logo LN
+			.button#button
+				//- a(href="#intro_section").listItem 關於我
+				//- a(href="#skill_section").listItem 技能
+				//- a(href="#experience_section").listItem 經驗
+				//- a(href="#works_section").listItem 作品集
+
+		#myheader
 			#name
 				h1 Li-Ning Huang
 				hr
 			#job_title
 				p 網頁前端工程 | 平面設計 | UI/UX設計
 			.link_wrap
+				a(href="https://github.com/huang798" target="_blank")
+					i.fab.fa-github-square#github
+				a(href="#")
+					i.fab.fa-medium#medium
 			#mouse_icon
 				#wheel
 		#intro_section
 			.intro_left
-				.photo
+				.intro_photo
 				.dialog#dialog1
 				.dialog#dialog2
 			.intro_text
@@ -102,7 +114,23 @@ html(lang='en')
 				h1 &lt;技能/&gt;
 			
 
-
+		#experience_section
+			.left_wrap
+				i.fas.fa-envelope-open-text
+				h1 &lt;經驗/&gt;
+			.right_wrap
+				.exp#exp1
+					.date#date1 8/2016 - 1/2017
+					p.title TEDxPurdueU校內組織
+					p.text 在TEDxPurdueU擔任平面設計師。通常的工作內容包含參與定期會議幫忙發想市場銷售的點子，並根據邀請的講者的演講內容製作相關的宣傳海報、組織成員的制服T恤等。
+				.exp#exp2
+					.date#date2 10/2018 - 5/2019
+					p.title Purdue Education Department
+					p.text 在普渡大學的教育學系擔任平面設計實習生，負責設計海報、LOGO、傳單的模板等等。也參與行銷組的固定會議，學習、了解關於行銷的手法與技巧。
+				.exp#exp3
+					.date#date3 1/2019 - 5/2019
+					p.title Purdue Conference
+					p.text 畢業製作和Purdue Conference合作，替他們設計、製作一款使用者友善且能夠全程在手機上進行操作的售票網站。組別製作了包括設計與開發前端的核心內容，而我主要負責用作門票的QR Code的自動生成、嵌入E-mail、發送等內容。
 
 		#works_section
 			//- .container.demo
@@ -159,7 +187,15 @@ html(lang='en')
 							| Description
 
 		#contact_section
-
+			.photo
+			hr
+			#email
+				i.far.fa-envelope
+				p huangln1996@gmail.com
+			//- br
+			#phone
+				i.fas.fa-phone
+				p 626-734-0816
 
 
 

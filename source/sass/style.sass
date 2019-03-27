@@ -2,6 +2,8 @@
 $color_orange: #ff6e3a
 $bg_white: #CBD4C2
 $color_white: #F8F8F8
+$sublime_pink: #F07178
+$sublime_orange: #F3C266
 
 //Initial Setting
 $font_size: 16px
@@ -63,7 +65,6 @@ body, html
 
 body
 	overflow-x: hidden
-	// height: 5000px
 
 *
 	padding: 0px
@@ -109,6 +110,27 @@ a
 		&:hover
 			color: $color_orange
 
+
+
+	// .list_collect:before, &:after
+	// 		background-color: #777
+
+#mobile_navbar
+	.button
+		+size(30px, 2px)
+		background-color: #fff
+		top: 10px
+		&:before, &:after
+			position: absolute
+			content: " "
+			border: solid 1px white
+			width: 30px
+			left: 0px
+			top: -10px
+
+		&:after
+			top: 10px
+
 .white_bg
 	background-color: #fff
 
@@ -124,11 +146,32 @@ a
 		&:hover
 			color: $color_orange
 
+	#button
+		background-color: #777
+		&:before, &:after
+			position: absolute
+			content: " "
+			border: solid 1px #777
+			width: 30px
+			left: 0px
+			top: -10px
+
+		&:after
+			top: 10px
+
+
+	.list_collect
+		&:before
+			border: solid 1px red
+			width: 50px
+			// z-index: 2
+			// display: none
+
 
 
 
 //Header---------------------------------------------
-.myheader
+#myheader
 	background-image: url("../images/doggy.png")
 	height: 500px
 	background-size: cover
@@ -160,6 +203,20 @@ a
 			color: $color_white
 			font-size: $font_size * 1.2
 
+	.link_wrap
+		text-align: center
+		top: 33%
+		font-size: 40px
+		#github
+			margin-right: 5px
+		#medium
+			margin-left: 5px
+
+	.link_wrap a
+		color: white
+		&:hover
+			color: $color_orange
+
 	#mouse_icon
 		position: absolute
 		left: 50%
@@ -172,14 +229,6 @@ a
 		display: block
 		z-index: 10
 		opacity: 0.7
-
-		// @media screen and(max-width: 1024px)
-		// 	display: none
-		// @media screen and(min-width: 1366px)
-		// 	bottom: 30%
-		// @media screen and(min-width: 1640px)
-		// 	bottom: 45%
-
 
 	#wheel
 		position: relative
@@ -215,15 +264,19 @@ a
 	padding-bottom: 100px
 
 	.intro_left
-		.photo
+		.intro_photo
 			background-image: url("../images/photo.jpg")
 			top: 18%
 			+size(300px, 300px)
 			background-position: center center
 			background-size: 80%
 			border-radius: 50%
-			box-shadow: 5px 5px 20px rgba(black, 0.6)
+			// box-shadow: 5px 5px 20px rgba(black, 0.6)
 			margin-right: 150px
+			// left: -250px
+			transition-duration: 2s
+		.here
+			box-shadow: 5px 5px 20px rgba(black, 0.8)
 
 		.dialog
 			box-sizing: border-box
@@ -322,7 +375,7 @@ a
 
 
 	span
-		color: #F07178
+		color: $sublime_pink
 
 	.note_title
 		font-size: 20px
@@ -330,6 +383,7 @@ a
 		font-size: $font_size
 
 	.right_wrap
+
 		h1
 			text-align: center
 			color: $color_orange
@@ -341,7 +395,80 @@ a
 
 
 
-//Skill Section-----------------------------------
+
+//Experience Section
+#experience_section
+	// height: 800px
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	background-color: #F4F6F6
+	padding-top: 100px
+	padding-bottom: 100px
+
+	.left_wrap
+		// border: solid 1px black
+		margin-top: 250px
+
+		.fa-envelope-open-text
+			font-size: 150px
+			// color: $color_orange
+		h1
+			color: $color_orange
+			margin-top: 20px
+
+	.right_wrap
+		margin-left: 250px
+		// border: solid 1px black
+
+	.exp
+		width: 450px
+		box-shadow: 5px 5px 12px rgba(black, 0.3)
+		background-color: #212121
+		color: white
+		padding: 30px 30px
+		transform: rotate(-3deg)
+		margin-left: 150px
+		&:before
+			content: ""
+			position: absolute
+			+size(30px, 50px)
+			top: -25px
+			transform: rotate(15deg)
+			left: 170px
+			box-shadow: 5px 5px 12px rgba(black, 0.3)
+			background-color: white
+		
+		.date
+			color: $sublime_orange
+			font-size: 18px
+		.title
+			color: $sublime_pink
+			font-size: 18px
+			font-weight: bold
+			letter-spacing: 1px
+		p
+			font-size: $font_size
+			width: 350px
+			line-height: $font_size * 1.5
+
+	#exp2
+		background-color: #181818
+		margin-left: 30px
+		transform: rotate(3deg)
+		&:before
+			transform: rotate(-20deg)
+			left: 250px
+
+	#exp3
+		transform: rotate(0deg)
+		margin-left: 180px
+		&:before
+			transform: rotate(0deg)
+			left: 300px
+
+
+//works Section-----------------------------------
 #works_section
 	padding-bottom: 50px
 	background-color: #333
@@ -359,3 +486,45 @@ a
 		margin-bottom: 50px
 		margin-top: -10px
 
+//Contact Me--------------------------------------
+#contact_section
+	background-color: $color_orange
+	text-align: center
+	padding-top: 50px
+	padding-bottom: 50px
+
+	.photo
+		margin-left: auto
+		margin-right: auto
+		background-image: url("../images/photo.jpg")
+		+size(80px, 80px)
+		background-position: center center
+		background-size: 80%
+		border-radius: 50%
+		box-shadow: 5px 5px 20px rgba(black, 0.6)
+
+	hr
+		width: 50px
+		margin-top: 30px
+		margin-bottom: 30px
+		margin-left: auto
+		margin-right: auto
+
+	#email, #phone
+		font-size: $font_size
+
+	#email
+		// border: solid 1px black
+	#phone
+		// border: solid 1px black
+		margin-top: -10px
+
+	i
+		// border: solid 1px black
+		margin-right: 15px
+		// display: inline-block
+	p
+		display: inline-block
+
+	.fa-phone
+		// font-weight: normal
