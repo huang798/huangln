@@ -9,12 +9,11 @@ $sublime_orange: #F3C266
 $font_size: 16px
 
 
-
 //明體
 // @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css)
 
 //仿宋體
-@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css)
+// @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css)
 
 //黑體/思源黑體
 // @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
@@ -79,9 +78,15 @@ a
 
 
 // NavBar--------------------------------------------
+
 .navbar
+	margin-bottom: 0px
 	position: fixed
 	z-index: 2
+	border-radius: 0px
+	background-color: transparent
+	border: none
+	border-bottom: solid 1px white
 	border-bottom: solid 1px white
 	color: white
 	display: flex
@@ -116,10 +121,13 @@ a
 	// 		background-color: #777
 
 #mobile_navbar
+	.navbar
+	.button_wrap
+		+size(30px, 30px)
 	.button
 		+size(30px, 2px)
 		background-color: #fff
-		top: 10px
+		top: 12px
 		&:before, &:after
 			position: absolute
 			content: " "
@@ -167,6 +175,33 @@ a
 			// z-index: 2
 			// display: none
 
+	.openmenu
+		background-color: #fff
+		a
+			color: #777
+
+
+.openmenu
+	display: none
+	border: solid 1px white
+	border-top: none
+	top: 55px
+	position: fixed
+	right: 0px
+	width: 100%
+	transition-duration: 0.5s
+	padding-right: 40px
+
+	a
+		display: block
+		line-height: 30px
+		text-decoration: none
+		color: white
+		text-align: right
+		transition-duration: 0.5s
+
+.active
+	display: initial
 
 
 
@@ -180,6 +215,9 @@ a
 	background-blend-mode: overlay
 	background-attachment: fixed
 	background-position: center left
+	@media screen and (max-width: 576px)
+		background-image: url("../images/doggy_mobile.png")
+		background-position: center center
 
 	#name
 		text-align: center
@@ -259,11 +297,16 @@ a
 #intro_section
 	background-color: $color_orange
 	display: flex
+	flex-wrap: wrap
 	justify-content: center
 	padding-top: 50px
 	padding-bottom: 100px
 
+	// @media screen and (max-width: )
+
 	.intro_left
+		@media screen and (max-width: 992px)
+			width: 100%
 		.intro_photo
 			background-image: url("../images/photo.jpg")
 			top: 18%
@@ -271,10 +314,11 @@ a
 			background-position: center center
 			background-size: 80%
 			border-radius: 50%
-			// box-shadow: 5px 5px 20px rgba(black, 0.6)
 			margin-right: 150px
-			// left: -250px
 			transition-duration: 2s
+			@media screen and (max-width: 992px)
+				margin-left: auto
+				margin-right: auto
 		.here
 			box-shadow: 5px 5px 20px rgba(black, 0.8)
 
@@ -303,8 +347,15 @@ a
 				top: 10px
 				transform: rotate(45deg)
 
+			@media screen and (max-width: 992px)
+				margin-left: auto
+				margin-right: auto
+
 		#dialog2
 			margin-left: 60px
+			@media screen and (max-width: 992px)
+				margin-left: auto
+				margin-right: auto
 
 		#dialog1, #dialog2
 			&:after
@@ -319,6 +370,12 @@ a
 	.intro_text
 		top: 16%
 		width: 500px
+		padding-left: 30px
+		padding-right: 30px
+		@media screen and (max-width: 992px)
+			margin-top: 180px
+		@media screen and (max-width: 576px)
+			width: 300px
 
 		span
 			color: white
@@ -331,14 +388,23 @@ a
 		h1
 			margin-bottom: 30px
 
+			@media screen and (max-width: 992px)
+				text-align: center
+				// border-bottom: solid 1px white
+
 
 //Skill section------------------------------------
 #skill_section
-	// height: 500px
 	display: flex
 	justify-content: center
+	flex-wrap: wrap
 	padding-top: 120px
 	padding-bottom: 80px
+
+	@media screen and (max-width: 992px)
+		flex-direction: column-reverse
+	@media screen and (max-width: 576px)
+		padding-bottom: 0px
 
 
 	.left_wrap1, .left_wrap2
@@ -358,6 +424,18 @@ a
 			left: 170px
 			box-shadow: 5px 5px 12px rgba(black, 0.3)
 			background-color: white
+			@media screen and (max-width: 576px)
+				display: none
+
+	.left_wrap1
+		@media screen and (max-width: 992px)
+			margin-left: auto
+			margin-right: auto
+		@media screen and (max-width: 576px)
+			width: 100%
+			transform: rotate(0deg)
+			box-shadow: none
+
 
 	.left_wrap2
 		width: 400px
@@ -366,12 +444,48 @@ a
 		left: 280px
 		transform: rotate(5deg)
 		background-color: #181818
+		animation: flipping 3s linear 3s infinite
+
 		&:before
 			content: ""
 			position: absolute
 			transform: rotate(-15deg)
 			left: 220px
 			box-shadow: 5px 5px 12px rgba(black, 0.3)
+
+		@media screen and (max-width: 992px)
+			left: 0px
+			top: 30px
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 50px
+		@media screen and (max-width: 576px)
+			top: -1px
+			transform: rotate(0deg)
+			box-shadow: none
+			animation: none
+			width: 100%
+			background-color: #212121
+			margin-bottom: 0px
+
+
+	@keyframes flipping
+		0% 
+			transform: rotate(5deg)
+		94% 
+			transform: rotate(4deg)
+		95% 
+			transform: rotate(3deg)
+		96% 
+			transform: rotate(4deg)
+		97% 
+			transform: rotate(3deg)
+		98% 
+			transform: rotate(4deg)
+		99% 
+			transform: rotate(3deg)
+		100% 
+			transform: rotate(4deg)
 
 
 	span
@@ -383,6 +497,11 @@ a
 		font-size: $font_size
 
 	.right_wrap
+		@media screen and (max-width: 992px)
+			width: 100%
+			text-align: center
+			margin-bottom: 50px
+
 
 		h1
 			text-align: center
@@ -398,28 +517,37 @@ a
 
 //Experience Section
 #experience_section
-	// height: 800px
 	display: flex
 	flex-wrap: wrap
 	justify-content: center
 	background-color: #F4F6F6
 	padding-top: 100px
 	padding-bottom: 100px
+	@media screen and (max-width: 576px)
+		padding-bottom: 0px
 
 	.left_wrap
-		// border: solid 1px black
 		margin-top: 250px
+
+		@media screen and (max-width: 992px)
+			width: 100%
+			text-align: center
+			margin-top: 0px
+			margin-bottom: 80px
+		@media screen and (max-width: 576px)
+			margin-bottom: 30px
 
 		.fa-envelope-open-text
 			font-size: 150px
-			// color: $color_orange
 		h1
 			color: $color_orange
 			margin-top: 20px
 
 	.right_wrap
 		margin-left: 250px
-		// border: solid 1px black
+		@media screen and (max-width: 992px)
+			margin-left: 0px
+			
 
 	.exp
 		width: 450px
@@ -438,7 +566,14 @@ a
 			left: 170px
 			box-shadow: 5px 5px 12px rgba(black, 0.3)
 			background-color: white
-		
+			@media screen and (max-width: 576px)
+				display: none
+		@media screen and (max-width: 992px)
+			margin-left: 0px
+		@media screen and (max-width: 576px)
+			width: 100%
+			transform: rotate(0deg)
+
 		.date
 			color: $sublime_orange
 			font-size: 18px
@@ -451,14 +586,27 @@ a
 			font-size: $font_size
 			width: 350px
 			line-height: $font_size * 1.5
+			@media screen and (max-width: 576px)
+				width: 100%
+
+	
+		
 
 	#exp2
 		background-color: #181818
 		margin-left: 30px
 		transform: rotate(3deg)
+		animation: flipping_2 3s linear 3s infinite
 		&:before
 			transform: rotate(-20deg)
 			left: 250px
+		@media screen and (max-width: 576px)
+			animation: none
+			transform: rotate(0deg)
+			width: 100%
+			margin-left: 0px
+			background-color: #212121
+			top: -1px
 
 	#exp3
 		transform: rotate(0deg)
@@ -467,6 +615,30 @@ a
 			transform: rotate(0deg)
 			left: 300px
 
+		@media screen and (max-width: 992px)
+			margin-left: 0px
+		@media screen and (max-width: 576px)
+			top: -2px
+
+	@keyframes flipping_2
+		0% 
+			transform: rotate(3deg)
+		94% 
+			transform: rotate(4deg)
+		95% 
+			transform: rotate(5deg)
+		96% 
+			transform: rotate(4deg)
+		97% 
+			transform: rotate(5deg)
+		98% 
+			transform: rotate(4deg)
+		99% 
+			transform: rotate(5deg)
+		100% 
+			transform: rotate(4deg)
+
+
 
 //works Section-----------------------------------
 #works_section
@@ -474,6 +646,7 @@ a
 	background-color: #333
 	color: #fff
 	padding-top: 30px
+	margin-top: -2px
 	h1
 		text-align: center
 		margin-top: 50px
