@@ -42,7 +42,7 @@ $font_size: 16px
 // .works_section, .header
 // 	display: block
 // *
-	// border: solid 1px black !important
+// 	border: solid 1px black !important
 
 *
 	font-family: '微軟正黑體'
@@ -79,6 +79,10 @@ a
 
 // NavBar--------------------------------------------
 
+
+
+
+//Desktop Navbar
 .navbar
 	margin-bottom: 0px
 	position: fixed
@@ -90,6 +94,7 @@ a
 	border-bottom: solid 1px white
 	color: white
 	display: flex
+	flex-wrap: wrap
 	justify-content: space-between
 	width: 100%
 	padding: 12px 120px
@@ -102,6 +107,7 @@ a
 		color: white
 		transition-duration: 0.5s
 		font-size: $font_size * 1.1
+
 		
 
 	.navbar_list a
@@ -116,29 +122,59 @@ a
 			color: $color_orange
 
 
+#mobile_navbar
+	// display: flex
+	display: none
+	justify-content: space-between
+	flex-wrap: wrap
+	@media screen and (max-width: 576px)
+		padding: 12px 50px
+	.navbar_logo
+		line-height: 30px
+	.hamburger
+		z-index: 3
+		cursor: pointer
+		span
+			display: inline-block
+			margin-bottom: 2px
+			height: 2px
+			width: 30px
+			border: solid 1px white
+			&:before, &:after
+				// position: absolut
+				content: ""
+				+size(30px, 2px)
+				border: solid 1px white
+				position: absolute
+				top: -10px
+				left: -1px
+			&:after
+				top: 10px
+
 
 	// .list_collect:before, &:after
 	// 		background-color: #777
 
-#mobile_navbar
-	.navbar
-	.button_wrap
-		+size(30px, 30px)
-	.button
-		+size(30px, 2px)
-		background-color: #fff
-		top: 12px
-		&:before, &:after
-			position: absolute
-			content: " "
-			border: solid 1px white
-			width: 30px
-			left: 0px
-			top: -10px
+// #mobile_navbar
+// 	.button_wrap
+// 		+size(30px, 30px)
+// 	.button
+// 		+size(30px, 2px)
+// 		background-color: #fff
+// 		top: 12px
+// 		&:before, &:after
+// 			position: absolute
+// 			content: " "
+// 			border: solid 1px white
+// 			width: 30px
+// 			left: 0px
+// 			top: -10px
 
-		&:after
-			top: 10px
+// 		&:after
+// 			top: 10px
 
+
+//When Navbar not at the top
 .white_bg
 	background-color: #fff
 
@@ -154,56 +190,58 @@ a
 		&:hover
 			color: $color_orange
 
-	#button
-		background-color: #777
-		&:before, &:after
-			position: absolute
-			content: " "
-			border: solid 1px #777
-			width: 30px
-			left: 0px
-			top: -10px
+	// #button
+	// 	background-color: #777
+	// 	&:before, &:after
+	// 		position: absolute
+	// 		content: " "
+	// 		border: solid 1px #777
+	// 		width: 30px
+	// 		left: 0px
+	// 		top: -10px
 
-		&:after
-			top: 10px
-
-
-	.list_collect
-		&:before
-			border: solid 1px red
-			width: 50px
-			// z-index: 2
-			// display: none
-
-	.openmenu
-		background-color: #fff
-		a
-			color: #777
+	// 	&:after
+	// 		top: 10px
 
 
-.openmenu
-	display: none
-	border: solid 1px white
-	border-top: none
-	top: 55px
-	position: fixed
-	right: 0px
-	width: 100%
-	transition-duration: 0.5s
-	padding-right: 40px
+	// .list_collect
+	// 	&:before
+	// 		border: solid 1px red
+	// 		width: 50px
+	// 		// z-index: 2
+	// 		// display: none
 
-	a
-		display: block
-		line-height: 30px
-		text-decoration: none
-		color: white
-		text-align: right
-		transition-duration: 0.5s
+	// .openmenu
+	// 	background-color: #fff
+	// 	a
+	// 		color: #777
 
-.active
-	display: initial
+//Toggle Open Mobile menu
+// .openmenu
+// 	display: none
+// 	border: solid 1px white
+// 	border-top: none
+// 	top: 55px
+// 	position: fixed
+// 	right: 0px
+// 	width: 100%
+// 	transition-duration: 0.5s
+// 	padding-right: 40px
 
+// 	a
+// 		display: block
+// 		line-height: 30px
+// 		text-decoration: none
+// 		color: white
+// 		text-align: right
+// 		transition-duration: 0.5s
 
+//NavBar RWD Mobile/Desktop exchenage
+@media screen and (max-width: 576px)
+	#desktop_navbar
+		display: none
+	#mobile_navbar
+		display: flex
 
 //Header---------------------------------------------
 #myheader
@@ -255,6 +293,8 @@ a
 		&:hover
 			color: $color_orange
 
+
+
 	#mouse_icon
 		position: absolute
 		left: 50%
@@ -267,6 +307,8 @@ a
 		display: block
 		z-index: 10
 		opacity: 0.7
+		@media screen and (max-width: 576px)
+			display: none
 
 	#wheel
 		position: relative
@@ -278,7 +320,8 @@ a
 		margin-left: auto
 		margin-right: auto
 		animation: wheel_roll 1s linear infinite
-
+		@media screen and (max-width: 576px)
+			display: none
 
 	@keyframes wheel_roll 
 		0%

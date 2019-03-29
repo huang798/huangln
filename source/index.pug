@@ -11,22 +11,26 @@ html(lang='en')
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 
 	body
-		//- .navbar#desktop_navbar
-		//- 	a(href="#myheader").navbar_logo LN
-		//- 	.navbar_list
-		//- 		a(href="#intro_section").listItem 關於我
-		//- 		a(href="#skill_section").listItem 技能
-		//- 		a(href="#experience_section").listItem 經驗
-		//- 		a(href="#works_section").listItem 作品集
-		.navbar#mobile_navbar
+		.navbar#desktop_navbar
 			a(href="#myheader").navbar_logo LN
-			.button_wrap
-				.button#button
-			.openmenu
+			.navbar_list
 				a(href="#intro_section").listItem 關於我
 				a(href="#skill_section").listItem 技能
 				a(href="#experience_section").listItem 經驗
 				a(href="#works_section").listItem 作品集
+		.navbar#mobile_navbar
+			a(href="#myheader").navbar_logo LN
+			.hamburger
+				span
+			ul(style="display: none")
+				li
+					a(href="#intro_section").listItem 關於我
+				li
+					a(href="#skill_section").listItem 技能
+				li
+					a(href="#experience_section").listItem 經驗 
+				li
+					a(href="#works_section").listItem 作品集
 
 		#myheader
 			#name
