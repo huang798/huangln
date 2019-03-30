@@ -122,7 +122,7 @@ a
 			color: $color_orange
 
 
-#mobile_navbar
+.mobile_navbar
 	// display: flex
 	display: none
 	justify-content: space-between
@@ -132,8 +132,6 @@ a
 	.navbar_logo
 		line-height: 30px
 	.hamburger
-		z-index: 3
-		cursor: pointer
 		span
 			display: inline-block
 			margin-bottom: 2px
@@ -141,7 +139,6 @@ a
 			width: 30px
 			border: solid 1px white
 			&:before, &:after
-				// position: absolut
 				content: ""
 				+size(30px, 2px)
 				border: solid 1px white
@@ -151,31 +148,29 @@ a
 			&:after
 				top: 10px
 
+	.navbar.mobile_navbar .hamburger span
+		cursor: pointer
 
-	// .list_collect:before, &:after
-	// 		background-color: #777
+	ul
+		width: 100%
+		margin-top: 20px
+		line-height: 30px
+		li
+			list-style: none
+			width: 100%
+			text-align: right
+			text-decoration: none
+			a
+				margin-right: 0px
+				color: white
+			a.listItem
+				margin-right: 0px
 
-// #mobile_navbar
-// 	.button_wrap
-// 		+size(30px, 30px)
-// 	.button
-// 		+size(30px, 2px)
-// 		background-color: #fff
-// 		top: 12px
-// 		&:before, &:after
-// 			position: absolute
-// 			content: " "
-// 			border: solid 1px white
-// 			width: 30px
-// 			left: 0px
-// 			top: -10px
 
-// 		&:after
-// 			top: 10px
 
 
 //When Navbar not at the top
-.white_bg
+#white_bg
 	background-color: #fff
 
 	.navbar_logo
@@ -190,57 +185,19 @@ a
 		&:hover
 			color: $color_orange
 
-	// #button
-	// 	background-color: #777
-	// 	&:before, &:after
-	// 		position: absolute
-	// 		content: " "
-	// 		border: solid 1px #777
-	// 		width: 30px
-	// 		left: 0px
-	// 		top: -10px
+	span#nottop
+		border: solid 1px #777
+	span#nottop:after, span#nottop:before
+		border: solid 1px #777
+	ul li a.listItem
+		color: #777
 
-	// 	&:after
-	// 		top: 10px
-
-
-	// .list_collect
-	// 	&:before
-	// 		border: solid 1px red
-	// 		width: 50px
-	// 		// z-index: 2
-	// 		// display: none
-
-	// .openmenu
-	// 	background-color: #fff
-	// 	a
-	// 		color: #777
-
-//Toggle Open Mobile menu
-// .openmenu
-// 	display: none
-// 	border: solid 1px white
-// 	border-top: none
-// 	top: 55px
-// 	position: fixed
-// 	right: 0px
-// 	width: 100%
-// 	transition-duration: 0.5s
-// 	padding-right: 40px
-
-// 	a
-// 		display: block
-// 		line-height: 30px
-// 		text-decoration: none
-// 		color: white
-// 		text-align: right
-// 		transition-duration: 0.5s
 
 //NavBar RWD Mobile/Desktop exchenage
 @media screen and (max-width: 576px)
-	#desktop_navbar
+	.desktop_navbar
 		display: none
-	#mobile_navbar
+	.mobile_navbar
 		display: flex
 
 //Header---------------------------------------------
@@ -264,6 +221,8 @@ a
 		h1
 			font-size: $font_size * 4
 			color: $color_white
+			@media screen and (max-width: 576px)
+				font-size: 50px
 		hr
 			width: 50px
 			border: solid 2px $color_orange
@@ -278,6 +237,8 @@ a
 		p
 			color: $color_white
 			font-size: $font_size * 1.2
+			@media screen and (max-width: 576px)
+				font-size: $font_size
 
 	.link_wrap
 		text-align: center
@@ -362,6 +323,8 @@ a
 			@media screen and (max-width: 992px)
 				margin-left: auto
 				margin-right: auto
+			@media screen and (max-width: 576px)
+				+size(200px, 200px)
 		.here
 			box-shadow: 5px 5px 20px rgba(black, 0.8)
 
@@ -378,6 +341,10 @@ a
 			border: solid 1px black
 			text-align: center
 			font-size: 16px
+			@media screen and (max-width: 576px)
+				+size(200px, 40px)
+				font-size: 12px
+				padding-top: 10px
 
 			&:before
 				content: ""
@@ -408,6 +375,8 @@ a
 				border: solid 1px #ccc
 				margin-top: 2px
 				margin-left: 4px
+				@media screen and (max-width: 576px)
+					margin-top: 0px
 
 
 	.intro_text
